@@ -5,7 +5,7 @@ export interface MenuItemType {
   link: string;
   icon: string;
   type: string;
-  children: MenuItemType[];
+  children?: MenuItemType[];
 };
 
 export const MENU: MenuItemType[] = [
@@ -22,5 +22,55 @@ export const MENU: MenuItemType[] = [
     icon: "sdfdsf",
     type: "sdfds",
     children: [],
+  },
+  {
+    title: "Dashboard",
+    link: LINKS.contact,
+    icon: "sdfdsf",
+    type: "sdfds",
+    children: [],
+  },
+  {
+    title: "Dashboard",
+    link: LINKS.contact,
+    icon: "sdfdsf",
+    type: "sdfds",
+    children: [],
+  },
+  {
+    title: "Dashboard",
+    link: LINKS.contact,
+    icon: "sdfdsf",
+    type: "sdfds",
+    children: [],
+  },
+  {
+    title: "Dashboard",
+    link: LINKS.contact,
+    icon: "sdfdsf",
+    type: "sdfds",
+    children: [
+      {
+        title: "Dashboard",
+        link: LINKS.contact,
+        icon: "sdfdsf",
+        type: "sdfds",
+        children: [],
+      },
+      {
+        title: "Dashboard",
+        link: LINKS.contact,
+        icon: "sdfdsf",
+        type: "sdfds",
+        children: [],
+      },
+      {
+        title: "Dashboard",
+        link: LINKS.contact,
+        icon: "sdfdsf",
+        type: "sdfds",
+        children: [],
+      },
+    ],
   },
 ];

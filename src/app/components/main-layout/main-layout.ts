@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Header} from '../header/header';
-import {SidebarComponent} from '../sidebar/sidebar';
+import {Sidebar} from '../sidebar/sidebar';
 import {RouterOutlet} from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import {RouterOutlet} from '@angular/router';
   styleUrls: ["./main-layout.scss"],
   imports: [
     Header,
-    SidebarComponent,
+    Sidebar,
     RouterOutlet
   ]
 })

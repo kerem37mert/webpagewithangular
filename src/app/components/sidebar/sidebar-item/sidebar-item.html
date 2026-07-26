@@ -1,0 +1,20 @@
+<div class="sidebar-item" >
+  @if (hasChildren()) {
+    <div class="parent" (click)="toggle()">
+      {{ item().title }}
+      <span>{{ expanded ? "v" : ">" }}</span>
+    </div>
+  } @else {
+    <a [routerLink]="item().link">
+      {{ item().title }}
+    </a>
+  }
+
+  @if (hasChildren() && expanded) {
+    <div class="sub-menu">
+      @for (child of item().children; track child.link) {
+        <app-sidebar-item [item]="child" />
+      }
+    </div>
+  }
+</div>

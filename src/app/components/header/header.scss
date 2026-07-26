@@ -1,3 +1,12 @@
 .header {
-  background-color: var(--primary);
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--primary);
+
+  .logo {
+    display: block;
+    width: 120px;
+  }
 }

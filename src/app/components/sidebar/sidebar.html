@@ -1,1 +1,5 @@
-<div>sidebar</div>
+<div class="sidebar">
+  @for (item of menu; track item.link) {
+   <app-sidebar-item [item]="item" />
+  }
+</div>

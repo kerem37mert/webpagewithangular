@@ -1,0 +1,21 @@
+.sidebar-item {
+  cursor: pointer;
+
+  a {
+    display: block;
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    color: var(--text-secondary);
+  }
+
+  .parent {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 1rem;
+    color: var(--text-primary);
+  }
+
+  .sub-menu {
+    padding-left: 0.75rem;
+  }
+}

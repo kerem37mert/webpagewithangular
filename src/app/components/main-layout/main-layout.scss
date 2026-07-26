@@ -1,3 +1,11 @@
 .main-layout {
   display: flex;
+
+  .sidebar {
+    flex: 1;
+  }
+
+  .main {
+    flex: 4;
+  }
 }
