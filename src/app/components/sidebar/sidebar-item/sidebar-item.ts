@@ -11,7 +11,7 @@ import {RouterLink} from '@angular/router';
   ]
 })
 
-export class SidebarItemComponent {
+export class SidebarItem {
   item = input.required<MenuItemType>();
   expanded = false;
 
