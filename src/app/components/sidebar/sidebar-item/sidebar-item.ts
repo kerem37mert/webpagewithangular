@@ -1,19 +1,30 @@
 import { Component, input } from '@angular/core';
 import { MenuItemType } from '../../../../constants';
-import {RouterLink} from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import {
+  CdkDrag,
+  CdkDragDrop,
+  CdkDropList,
+  moveItemInArray
+} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-sidebar-item',
   templateUrl: './sidebar-item.html',
   styleUrls: ['./sidebar-item.scss'],
   imports: [
-    RouterLink
+    RouterLink,
+    RouterLinkActive,
+    CdkDrag,
+    CdkDropList,
   ]
 })
 
 export class SidebarItem {
   item = input.required<MenuItemType>();
-  expanded = false;
+  level = input<number>(0);
+  expanded: boolean = false;
+  isDraggable: boolean = true;
 
   hasChildren(): boolean {
     return !!this.item().children?.length;
@@ -23,5 +34,13 @@ export class SidebarItem {
     if (this.hasChildren()) {
       this.expanded = !this.expanded;
     }
+  }
+
+  dropChild(event: CdkDragDrop<MenuItemType[] | any>) {
+    moveItemInArray(
+      event.container.data,
+      event.previousIndex,
+      event.currentIndex
+    );
   }
 }

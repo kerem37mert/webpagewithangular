@@ -1,19 +1,32 @@
-<div class="sidebar-item" >
+<div
+  class="sidebar-item"
+  [style.--level]="level()"
+  cdkDrag cdkDragBoundary=".sidebar"
+  [cdkDragDisabled]="!isDraggable"
+>
   @if (hasChildren()) {
     <div class="parent" (click)="toggle()">
-      {{ item().title }}
+      <span class="title">{{ item().title }}</span>
       <span>{{ expanded ? "v" : ">" }}</span>
     </div>
   } @else {
-    <a [routerLink]="item().link">
+    <a
+      [routerLink]="item().link"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}"
+    >
       {{ item().title }}
     </a>
   }
 
   @if (hasChildren() && expanded) {
-    <div class="sub-menu">
+    <div
+      cdkDropList
+      [cdkDropListData]="item().children"
+      (cdkDropListDropped)="dropChild($event)"
+    >
       @for (child of item().children; track child.link) {
-        <app-sidebar-item [item]="child" />
+        <app-sidebar-item [item]="child" [level]="level() + 1" />
       }
     </div>
   }
