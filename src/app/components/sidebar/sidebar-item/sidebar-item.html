@@ -22,7 +22,7 @@
   @if (hasChildren() && expanded) {
     <div
       cdkDropList
-      [cdkDropListData]="item().children"
+      [cdkDropListData]="item().children!"
       (cdkDropListDropped)="dropChild($event)"
     >
       @for (child of item().children; track child.link) {

@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { MenuItemType } from '../../../../constants';
+import {MENU, MenuItemType} from '../../../../constants';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import {
   CdkDrag,
@@ -36,11 +36,12 @@ export class SidebarItem {
     }
   }
 
-  dropChild(event: CdkDragDrop<MenuItemType[] | any>) {
+  dropChild(event: CdkDragDrop<MenuItemType[]>) {
     moveItemInArray(
       event.container.data,
       event.previousIndex,
       event.currentIndex
-    );
+    )
+    localStorage.setItem("sidebar-menu", JSON.stringify(MENU));
   }
 }
