@@ -1,0 +1,5 @@
+@if (type() === "link") {
+  <a [routerLink]="link()">{{ text() }}</a>
+} @else {
+  <button type="button">{{ text() }}</button>
+}

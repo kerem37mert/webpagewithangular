@@ -1,0 +1,37 @@
+<div class="table-container">
+  <table>
+    <thead>
+    <tr
+      class="thead-row"
+      cdkDropList
+      cdkDropListOrientation="horizontal"
+      (cdkDropListDropped)="dropColumn($event)"
+    >
+      @for (column of columns(); track column.id) {
+        <th
+          [style.width.px]="column.width"
+          [style.max-width.px]="column.width"
+          cdkDrag
+        >
+          {{ column?.header }}
+        </th>
+      }
+    </tr>
+    </thead>
+
+    <tbody>
+      @for (row of data(); track row.id) {
+        <tr class="tbody-row">
+          @for (column of columns(); track column.id) {
+            <td
+              [style.width.px]="column.width"
+              [style.max-width.px]="column.width"
+            >
+              {{ column.accessor(row) }}
+            </td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
