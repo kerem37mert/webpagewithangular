@@ -3,7 +3,7 @@ import {RouterLink} from '@angular/router';
 
 type btnType = "link" | "button";
 type btnVariant = "primary" | "secondary";
-type btnSize = "small" | "medium" | "large";
+type btnSize = "x-small" | "small" | "medium" | "large" | "x-large";
 
 @Component({
   selector: "app-button",

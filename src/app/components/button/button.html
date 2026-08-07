@@ -1,5 +1,10 @@
 @if (type() === "link") {
   <a [routerLink]="link()">{{ text() }}</a>
 } @else {
-  <button type="button">{{ text() }}</button>
+  <button
+    [class]="`btn btn--${variant()} btn--${size()}`"
+    type="button"
+  >
+    {{ text() }}
+  </button>
 }
