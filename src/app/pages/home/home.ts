@@ -10,5 +10,5 @@ import { Button } from '../../components';
 })
 
 export class Home {
-  title = 'Home';
+  title = 'Sticky Notlarım';
 }

@@ -1,4 +1,19 @@
 .home {
   border: 1px solid var(--primary);
-  padding: 1rem;
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: gray;
+    padding: 1rem;
+
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+
+  .note-list {
+    padding: 1rem;
+  }
 }
