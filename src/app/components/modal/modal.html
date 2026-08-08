@@ -1,5 +1,7 @@
 @if (isOpen()) {
-  <div>
-    <ng-content />
+  <div class="modal" (click)="onClose()">
+      <div [class]="`modal-content modal-content--${size()}`">
+        <ng-content />
+      </div>
   </div>
 }

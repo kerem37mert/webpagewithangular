@@ -1,4 +1,6 @@
-import {Component, input} from "@angular/core";
+import {Component, input, model} from "@angular/core";
+
+type modalSize = "small" | "medium" | "large";
 
 @Component({
   selector: "app-modal",
@@ -7,5 +9,10 @@ import {Component, input} from "@angular/core";
 })
 
 export class Modal {
-  isOpen = input<boolean>(false);
+  isOpen = model<boolean>(false);
+  size = input<modalSize>("medium");
+
+  onClose = (): void => {
+    this.isOpen.set(false);
+  }
 }

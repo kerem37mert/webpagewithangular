@@ -1,7 +1,13 @@
 <div class="home">
   <div class="top-bar">
     <div class="title">{{ title }}</div>
-    <app-button type="button" text="Yeni +" variant="primary" size="large" />
+    <app-button
+      type="button"
+      text="Yeni +"
+      variant="primary"
+      size="large"
+      (click)="handleNewNote()"
+    />
   </div>
 
   <div class="note-list">
@@ -10,4 +16,8 @@
     <app-draggable-note />
     <app-draggable-note />
   </div>
+
+  <app-modal [(isOpen)]="isModalOpen" size="medium">
+    <app-edit-note />
+  </app-modal>
 </div>
