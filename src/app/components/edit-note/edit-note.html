@@ -1,11 +1,22 @@
 <app-modal
   [(isOpen)]="isModalOpen"
   size="medium"
-  [closeOnOutsideClick]="true"
+  [closeOnOutsideClick]="false"
 >
   <div
     class="edit-note"
   >
-    modal
+    <div class="edit-note__body">
+      modal
+    </div>
+    <div class="edit-note__footer">
+      <app-button type="button" text="Kaydet"  />
+      <app-button
+        type="button"
+        text="Sil"
+        variant="secondary"
+        (click)="onClose()"
+      />
+    </div>
   </div>
 </app-modal>

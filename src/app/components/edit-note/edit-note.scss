@@ -1,4 +1,16 @@
 .edit-note {
-  background-color: blue;
-  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 5px;
+
+  &__body {
+    padding: 1rem;
+  }
+
+  &__footer {
+    border-top: 2px solid gray;
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
 }

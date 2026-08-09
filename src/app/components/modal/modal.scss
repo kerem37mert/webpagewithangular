@@ -1,17 +1,14 @@
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 5rem;
   z-index: 1933;
 
   &__content {
-    /* Size */
     &--small {
       width: 40%;
     }
