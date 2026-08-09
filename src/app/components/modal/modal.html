@@ -4,14 +4,9 @@
     (click)="closeOnOutsideClick() && onClose()"
   >
     <div
-      [class]="`modal-content modal-content--${size()}`"
+      [class]="`modal-content modal__content--${size()}`"
       (click)="$event.stopPropagation()"
     >
-      @if (title() || showCloseButton()) {
-        <div class="modal__content__header">
-
-        </div>
-      }
       <ng-content />
     </div>
   </div>
