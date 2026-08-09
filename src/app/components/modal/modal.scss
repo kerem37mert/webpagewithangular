@@ -10,7 +10,7 @@
   justify-content: center;
   z-index: 1933;
 
-  .modal-content {
+  &__content {
     /* Size */
     &--small {
       width: 40%;
@@ -20,6 +20,10 @@
     }
     &--large {
       width: 60%;
+    }
+
+    &__header {
+
     }
   }
 }

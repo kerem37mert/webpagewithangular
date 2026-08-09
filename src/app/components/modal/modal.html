@@ -1,10 +1,18 @@
 @if (isOpen()) {
-  <div class="modal" (click)="closeOnOutsideClick() && onClose()">
-      <div
-        [class]="`modal-content modal-content--${size()}`"
-        (click)="$event.stopPropagation()"
-      >
-        <ng-content />
-      </div>
+  <div
+    class="modal"
+    (click)="closeOnOutsideClick() && onClose()"
+  >
+    <div
+      [class]="`modal-content modal-content--${size()}`"
+      (click)="$event.stopPropagation()"
+    >
+      @if (title() || showCloseButton()) {
+        <div class="modal__content__header">
+
+        </div>
+      }
+      <ng-content />
+    </div>
   </div>
 }
