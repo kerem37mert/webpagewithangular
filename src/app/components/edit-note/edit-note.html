@@ -1,5 +1,7 @@
-<div
-  class="edit-note"
->
-  modal
-</div>
+<app-modal [(isOpen)]="isModalOpen" size="medium" [closeOnOutsideClick]="false">
+  <div
+    class="edit-note"
+  >
+    modal
+  </div>
+</app-modal>

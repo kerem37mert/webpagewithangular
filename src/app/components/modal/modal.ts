@@ -11,6 +11,7 @@ type modalSize = "small" | "medium" | "large";
 export class Modal {
   isOpen = model<boolean>(false);
   size = input<modalSize>("medium");
+  closeOnOutsideClick = input<boolean>(true)
 
   onClose = (): void => {
     this.isOpen.set(false);

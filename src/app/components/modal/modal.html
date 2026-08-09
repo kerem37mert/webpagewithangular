@@ -1,6 +1,9 @@
 @if (isOpen()) {
-  <div class="modal" (click)="onClose()">
-      <div [class]="`modal-content modal-content--${size()}`">
+  <div class="modal" (click)="closeOnOutsideClick() && onClose()">
+      <div
+        [class]="`modal-content modal-content--${size()}`"
+        (click)="$event.stopPropagation()"
+      >
         <ng-content />
       </div>
   </div>

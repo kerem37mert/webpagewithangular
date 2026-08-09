@@ -12,6 +12,9 @@
 
   .modal-content {
     /* Size */
+    &--small {
+      width: 40%;
+    }
     &--medium {
       width: 50%;
     }
