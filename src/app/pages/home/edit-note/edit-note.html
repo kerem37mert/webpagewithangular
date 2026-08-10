@@ -7,10 +7,18 @@
     class="edit-note"
   >
     <div class="edit-note__body">
-      modal
+      <input
+        type="text"
+        [formField]="editNoteForm.title"
+      />
+      <textarea
+        type="text"
+        [formField]="editNoteForm.content"
+      >
+      </textarea>
     </div>
     <div class="edit-note__footer">
-      <app-button type="button" text="Kaydet"  />
+      <app-button type="button" text="Kaydet" (click)="onSubmit()"  />
       <app-button
         type="button"
         text="Sil"

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {DraggableNote, EditNote} from '../../components';
+import {DraggableNote} from '../../components';
 import { Button } from '../../components';
+import {EditNote} from './edit-note/edit-note';
 
 @Component({
   selector: 'app-home',
