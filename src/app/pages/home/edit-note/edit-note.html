@@ -20,13 +20,18 @@
       </textarea>
     </div>
     <div class="edit-note__footer">
-      <app-button type="button" text="Kaydet" (click)="onSubmit()"  />
-      <app-button
-        type="button"
-        text="Sil"
-        variant="secondary"
-        (click)="onClose()"
-      />
+      <div class="edit-note__footer__colors-panel">
+        <app-button type="button" text="color" (click)="toggleColorPanel()" />
+      </div>
+      <div class="edit-note__footer__buttons">
+        <app-button type="button" text="Kaydet" (click)="onSubmit()"  />
+        <app-button
+          type="button"
+          text="Sil"
+          variant="secondary"
+          (click)="onClose()"
+        />
+      </div>
     </div>
   </div>
 </app-modal>

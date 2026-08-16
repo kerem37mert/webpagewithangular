@@ -21,6 +21,7 @@ export class EditNote {
     title: "",
     content: "",
   });
+  isColorPanelOpen = false;
 
   editNoteForm = form(this.editNoteModel);
 
@@ -31,5 +32,9 @@ export class EditNote {
   onSubmit(): void {
     const formData = this.editNoteModel();
     console.log(formData);
+  }
+
+  toggleColorPanel() {
+    this.isColorPanelOpen = !this.isColorPanelOpen;
   }
 }

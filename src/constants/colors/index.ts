@@ -1,16 +1,16 @@
 export interface ColorType {
-  color: string;
+  name: string;
   hex?: string;
   rgb?: string;
 }
 
 export const colors: ColorType[] = [
   {
-    color: "white",
+    name: "white",
     hex: "#fff",
   },
   {
-    color: "blue",
+    name: "blue",
     hex: "#add8e6",
   }
 ];
