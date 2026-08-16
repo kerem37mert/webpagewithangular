@@ -26,7 +26,7 @@
       <div class="edit-note__footer__colors-panel">
         <app-button type="button" text="color" (click)="toggleColorPanel()" />
         @if (isColorPanelOpen) {
-          <div class="color-list">
+          <div class="color-list" appDragScroll>
             @for (color of colors; track color.name) {
               <div
                 class="color-list__item"

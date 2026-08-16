@@ -3,6 +3,7 @@ import { form, FormField } from '@angular/forms/signals';
 import {Modal} from '../../../components';
 import {Button} from '../../../components';
 import {COLORS, ColorType, EditNoteForm} from '../../../../constants';
+import {DragScrollDirective} from '../../../directives';
 
 interface NoteType {
   title: string;
@@ -18,6 +19,7 @@ interface NoteType {
     FormField,
     Modal,
     Button,
+    DragScrollDirective,
   ]
 })
 

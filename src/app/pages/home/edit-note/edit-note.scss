@@ -34,17 +34,20 @@
     border-top: 2px solid gray;
     display: flex;
     justify-content: space-between;
-    gap: 0.5rem;
+    gap: 1rem;
     padding: 0.5rem 1rem;
 
     &__colors-panel {
       display: flex;
+      min-width: 0;
       gap: 0.5rem;
       align-items: center;
 
       .color-list {
         display: flex;
         gap: 0.25rem;
+        overflow: auto;
+        scrollbar-width: none;
 
         &__item {
           border: 0.5px solid #000;
