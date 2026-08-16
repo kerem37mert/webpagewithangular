@@ -6,7 +6,10 @@
   <div
     class="edit-note"
   >
-    <div class="edit-note__body">
+    <div
+      class="edit-note__body"
+      [style.background-color]="note().color"
+    >
       <input
         type="text"
         placeholder="Başlık"
@@ -22,6 +25,17 @@
     <div class="edit-note__footer">
       <div class="edit-note__footer__colors-panel">
         <app-button type="button" text="color" (click)="toggleColorPanel()" />
+        @if (isColorPanelOpen) {
+          <div class="color-list">
+            @for (color of colors; track color.name) {
+              <div
+                class="color-list__item"
+                [style.background-color]="color.hex || color.rgb"
+                (click)="setColor(color?.hex || color.rgb || '#fff')"
+              ></div>
+            }
+          </div>
+        }
       </div>
       <div class="edit-note__footer__buttons">
         <app-button type="button" text="Kaydet" (click)="onSubmit()"  />

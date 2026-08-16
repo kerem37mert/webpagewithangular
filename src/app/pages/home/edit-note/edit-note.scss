@@ -9,12 +9,14 @@
     gap: 1rem;
 
     input {
+      background-color: inherit;
       border: none;
       font-size: 1.5rem;
       outline: none;
     }
 
     textarea {
+      background-color: inherit;
       border: none;
       outline: none;
       resize: none;
@@ -36,7 +38,25 @@
     padding: 0.5rem 1rem;
 
     &__colors-panel {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
 
+      .color-list {
+        display: flex;
+        gap: 0.25rem;
+
+        &__item {
+          border: 0.5px solid #000;
+          border-radius: 50%;
+          cursor: pointer;
+          padding: 0.625rem;
+
+          &:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
     }
 
     &__buttons {

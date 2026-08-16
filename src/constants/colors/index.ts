@@ -4,7 +4,7 @@ export interface ColorType {
   rgb?: string;
 }
 
-export const colors: ColorType[] = [
+export const COLORS: ColorType[] = [
   {
     name: "white",
     hex: "#fff",
