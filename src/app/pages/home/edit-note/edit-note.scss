@@ -1,6 +1,7 @@
 .edit-note {
   background-color: var(--white);
   border-radius: 5px;
+  overflow: hidden;
 
   &__body {
     padding: 1rem;
@@ -31,7 +32,6 @@
   }
 
   &__footer {
-    background-color: var(--white);
     border-top: 2px solid gray;
     display: flex;
     justify-content: space-between;
