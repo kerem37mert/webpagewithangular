@@ -1,11 +1,8 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages';
-import { Contact } from './pages';
+import { Contact, Register, Login } from './pages';
 import { LINKS } from '../constants';
-import {MainLayout} from './components';
-import {AuthLayout} from './components/auth-layout/auth-layout';
-import {Login} from './pages/auth/login/login';
-import {Register} from './pages/auth/register/register';
+import { MainLayout, AuthLayout } from './components';
 
 export const routes: Routes = [
   {
