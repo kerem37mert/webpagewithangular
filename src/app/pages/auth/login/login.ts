@@ -1,5 +1,7 @@
-import { Component } from "@angular/core";
+import {Component, signal} from "@angular/core";
 import TextInput from '../../../components/text-input/text-input';
+import {form} from '@angular/forms/signals';
+import {LoginForm} from '../../../../constants';
 
 @Component({
   selector: "app-login",
@@ -11,5 +13,9 @@ import TextInput from '../../../components/text-input/text-input';
 })
 
 export class Login {
-
+  loginModel = signal<LoginForm>({
+    identifier: "",
+    password: "",
+  });
+  loginForm = form(this.loginModel);
 }
