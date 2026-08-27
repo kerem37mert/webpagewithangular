@@ -6,3 +6,4 @@ export * from "./table/table";
 export * from "./button/button";
 export * from "./modal/modal";
 export * from "./auth-layout/auth-layout";
+export * from "./text-input/text-input";

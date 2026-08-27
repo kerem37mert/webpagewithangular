@@ -1,0 +1,17 @@
+import {Component, input} from "@angular/core";
+import {FieldTree, FormField} from '@angular/forms/signals';
+
+@Component({
+  selector: "app-text-input",
+  templateUrl: "./text-input.html",
+  styleUrls: ["./text-input.scss"],
+  imports: [
+    FormField
+  ]
+})
+
+export default class TextInput {
+  placeholder = input<string>("");
+  field = input<FieldTree<string>>();
+  label = input<string>();
+}

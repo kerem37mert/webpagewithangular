@@ -26,13 +26,13 @@ interface NoteType {
 export class EditNote {
   isModalOpen = model<boolean>(false)
   note = signal<NoteType>({
-    title: "",
-    content: "",
+    title: "initial title",
+    content: "initial content",
     color: "#fff",
   });
   editNoteModel = signal<EditNoteForm>({
-    title: "",
-    content: "",
+    title: this.note().title,
+    content: this.note().content,
   });
   isColorPanelOpen = false;
   colors: ColorType[] = COLORS;

@@ -1,0 +1,13 @@
+<div class="text-input">
+  @if (label()) {
+    <label>
+      {{ label() }}
+    </label>
+  }
+  <input
+    class="text-input"
+    [placeholder]="placeholder()"
+    [formField]="field()!"
+  /><!--şimdilik kesin geleceğini varsaydım input required yapaiblieim-->
+</div>
+

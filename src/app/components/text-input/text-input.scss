@@ -1,0 +1,10 @@
+.text-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+  input {
+    outline: none;
+    padding: 0.25rem 0.5rem;
+  }
+}
