@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { MENU, MenuItemType } from '../../../constants';
+import { MENU, MenuItemType } from '../../constants';
 import { SidebarItem } from './sidebar-item/sidebar-item';
 import {CdkDragDrop, CdkDropList, moveItemInArray} from '@angular/cdk/drag-drop';
 

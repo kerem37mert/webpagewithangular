@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages';
 import { Contact, Register, Login } from './pages';
-import { LINKS } from '../constants';
+import { LINKS } from './constants';
 import { MainLayout, AuthLayout } from './components';
 
 export const routes: Routes = [

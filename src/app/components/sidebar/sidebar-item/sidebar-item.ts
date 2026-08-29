@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import {MENU, MenuItemType} from '../../../../constants';
+import {MENU, MenuItemType} from '../../../constants';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import {
   CdkDrag,

@@ -2,7 +2,8 @@ import {Component, signal, model} from "@angular/core";
 import { form, FormField } from '@angular/forms/signals';
 import {Modal} from '../../../components';
 import {Button} from '../../../components';
-import {COLORS, ColorType, EditNoteForm} from '../../../../constants';
+import {COLORS, ColorType} from '../../../constants';
+import { EditNoteForm } from '../../../types';
 import {DragScrollDirective} from '../../../directives';
 
 interface NoteType {
