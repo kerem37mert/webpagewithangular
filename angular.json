@@ -31,6 +31,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/env.ts",
+                  "with": "src/environments/env.production.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -45,6 +51,26 @@
               ],
               "outputHashing": "all"
             },
+            "preprod": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/env.ts",
+                  "with": "src/environments/env.preprod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "develop": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/env.ts",
+                  "with": "src/environments/env.develop.ts"
+                }
+              ],
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            },
             "development": {
               "optimization": false,
               "extractLicenses": false,
@@ -58,6 +84,12 @@
           "configurations": {
             "production": {
               "buildTarget": "ang:build:production"
+            },
+            "preprod": {
+              "buildTarget": "ang:build:preprod"
+            },
+            "develop": {
+              "buildTarget": "ang:build:develop"
             },
             "development": {
               "buildTarget": "ang:build:development"

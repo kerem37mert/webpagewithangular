@@ -4,10 +4,17 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:develop": "ng serve --configuration=develop",
+    "start:preprod": "ng serve --configuration=preprod",
+    "start:prod": "ng serve --configuration=production",
     "build": "ng build",
+    "build:develop": "ng build --configuration=develop",
+    "build:preprod": "ng build --configuration=preprod",
+    "build:prod": "ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+
   "private": true,
   "packageManager": "npm@11.6.1",
   "dependencies": {
