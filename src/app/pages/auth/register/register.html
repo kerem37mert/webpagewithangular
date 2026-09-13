@@ -21,9 +21,18 @@
 <app-text-input
   placeholder="Password"
   label="Password"
+  type="password"
   [field]="registerForm.password"
 />
-<app-button
-  type="button"
-  text="Register"
-/>
+
+<div class="btn-container">
+  <app-button
+    type="button"
+    text="Register"
+  />
+</div>
+
+<div class="login-footer">
+  or
+  <a [routerLink]="loginLink">login</a>
+</div>

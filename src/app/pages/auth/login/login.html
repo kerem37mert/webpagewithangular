@@ -16,5 +16,11 @@
     type="button"
     text="Login"
     (click)="onSubmit()"
+    [showLoading]="isLoading()"
   />
+</div>
+
+<div class="login-footer">
+  or
+  <a [routerLink]="registerLink">register</a>
 </div>

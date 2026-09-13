@@ -1,12 +1,14 @@
 .auth-layout {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 150px;
   height: calc(100vh - 150px);
 
   &__container {
-    background-color: red;
+    background-color: gray;
+    border-radius: 5px;
     width: 40%;
     padding: 1rem;
     box-sizing: border-box;

@@ -20,4 +20,5 @@ export class Button {
   link = input<string>();
   variant = input<btnVariant>("primary");
   size = input<btnSize>("medium");
+  showLoading = input<boolean>(false);
 }

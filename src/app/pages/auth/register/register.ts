@@ -3,6 +3,8 @@ import {RegisterForm} from '../../../types';
 import {form} from '@angular/forms/signals';
 import TextInput from '../../../components/text-input/text-input';
 import {Button} from '../../../components';
+import {LINKS} from '../../../constants';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: "app-register",
@@ -10,7 +12,8 @@ import {Button} from '../../../components';
   styleUrls: ["./register.scss"],
   imports: [
     TextInput,
-    Button
+    Button,
+    RouterLink
   ]
 })
 
@@ -24,4 +27,6 @@ export class Register {
   })
 
   registerForm = form(this.registerModel);
+
+  loginLink = ['/', LINKS.auth, LINKS.login];
 }

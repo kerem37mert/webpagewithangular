@@ -5,6 +5,10 @@
     [class]="`btn btn--${variant()} btn--${size()}`"
     type="button"
   >
-    {{ text() }}
+    @if (showLoading()) {
+      yükleniyor...
+    } @else {
+      {{ text() }}
+    }
   </button>
 }
