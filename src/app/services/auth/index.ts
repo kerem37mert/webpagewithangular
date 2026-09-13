@@ -14,4 +14,9 @@ export class AuthService {
   register(credentials: RegisterRequestDTO): Observable<RegisterResponseDTO> {
     return this.http.post<RegisterResponseDTO>("/auth/register", credentials);
   }
+
+  isAuthenticated() {
+    // todo: one day
+    return false;
+  }
 }

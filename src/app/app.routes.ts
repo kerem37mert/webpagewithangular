@@ -3,6 +3,7 @@ import { Home } from './pages';
 import { Contact, Register, Login } from './pages';
 import { LINKS } from './constants';
 import { MainLayout, AuthLayout } from './components';
+import {authGuard} from './guards/auth-guard';
 
 export const routes: Routes = [
   {
@@ -12,6 +13,7 @@ export const routes: Routes = [
       {
         path: "",
         component: Home,
+        canActivate: [authGuard],
       },
       {
         path: LINKS.contact,
