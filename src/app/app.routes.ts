@@ -4,6 +4,7 @@ import { Contact, Register, Login } from './pages';
 import { LINKS } from './constants';
 import { MainLayout, AuthLayout } from './components';
 import {authGuard} from './guards/auth-guard';
+import {unauthGuard} from './guards/unauth-guard';
 
 export const routes: Routes = [
   {
@@ -24,6 +25,7 @@ export const routes: Routes = [
   {
     path: LINKS.auth,
     component: AuthLayout,
+    canActivate: [unauthGuard],
     children: [
       {
         path: "",
