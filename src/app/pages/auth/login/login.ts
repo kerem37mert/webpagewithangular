@@ -1,12 +1,12 @@
 import {Component, inject, signal} from "@angular/core";
 import TextInput from '../../../components/text-input/text-input';
-import {form} from '@angular/forms/signals';
+import {form, required, submit} from '@angular/forms/signals';
 import {LoginForm} from '../../../types';
 import {Button} from '../../../components';
 import {AuthService} from '../../../services/auth';
-import {finalize} from 'rxjs';
 import {RouterLink} from '@angular/router';
 import {LINKS} from '../../../constants';
+import {firstValueFrom} from 'rxjs';
 
 @Component({
   selector: "app-login",
@@ -26,27 +26,30 @@ export class Login {
     identifier: "",
     password: "",
   });
-  loginForm = form(this.loginModel);
+  loginForm = form(this.loginModel, (schemaPath) => {
+    required(schemaPath.identifier, {message: "This field is required"});
+
+    required(schemaPath.password, {message: "This field is required"});
+  });
 
   isLoading = signal(false);
   registerLink = ['/', LINKS.auth, LINKS.register];
 
-  onSubmit(): void {
-    const { identifier, password } = this.loginModel();
-    this.isLoading.set(true);
+  async onSubmit() {
+    await submit(this.loginForm, async (field) => {
+      const { identifier, password } = field().value();
+      this.isLoading.set(true);
 
-    this.authService.login({
-      identifier,
-      password,
-    }).pipe(
-      finalize(() => this.isLoading.set(false)),
-    ).subscribe({
-      next: (response) => {
+      try {
+        const response = await firstValueFrom(
+          this.authService.login({ identifier, password })
+        );
         console.log(response);
-      },
-      error: (error) => {
-        console.log("ere",error);
+      } catch (error) {
+        console.log("ere", error);
+      } finally {
+        this.isLoading.set(false);
       }
-    })
+    });
   }
 }

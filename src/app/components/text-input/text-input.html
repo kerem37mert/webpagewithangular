@@ -10,7 +10,14 @@
   <input
     [placeholder]="placeholder()"
     [type]="type()"
-    [formField]="field()!"
-  /><!--şimdilik kesin geleceğini varsaydım input required yapaiblieim-->
+    [formField]="field()"
+  />
+  @if (fieldState().touched() && fieldState().invalid()) {
+    <div class="text-input__error-list">
+      @for (error of fieldState().errors(); track error) {
+        <div class="error">{{ error.message }}</div>
+      }
+    </div>
+  }
 </div>
 

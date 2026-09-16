@@ -1,4 +1,4 @@
-import {Component, input} from "@angular/core";
+import {Component, computed, input} from "@angular/core";
 import {FieldTree, FormField} from '@angular/forms/signals';
 
 type inputSize = "small" | "medium" | "large";
@@ -15,9 +15,11 @@ type inputType = "text" | "password";
 
 export default class TextInput {
   placeholder = input<string>("");
-  field = input<FieldTree<string>>();
+  field = input.required<FieldTree<string>>();
   label = input<string>();
   size = input<inputSize>("medium");
   type = input<inputType>("text");
   required = input<boolean>(false);
+
+  fieldState = computed(() => this.field()());
 }
