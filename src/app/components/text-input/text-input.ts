@@ -19,4 +19,5 @@ export default class TextInput {
   label = input<string>();
   size = input<inputSize>("medium");
   type = input<inputType>("text");
+  required = input<boolean>(false);
 }

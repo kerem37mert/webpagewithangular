@@ -8,9 +8,18 @@
     outline: none;
   }
 
+  &__label {
+    &__asterix {
+      color: tomato;
+    }
+  }
+
   &--small {
-    label {
+    &__label {
       font-size: 1rem;
+
+      &__asterix {
+      }
     }
 
     input {
@@ -20,7 +29,7 @@
   }
 
   &--medium {
-    label {
+    &__label {
       font-size: 1rem;
     }
 

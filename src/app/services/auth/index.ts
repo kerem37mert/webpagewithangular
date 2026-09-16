@@ -17,6 +17,6 @@ export class AuthService {
 
   isAuthenticated() {
     // todo: one day
-    return true;
+    return false;
   }
 }

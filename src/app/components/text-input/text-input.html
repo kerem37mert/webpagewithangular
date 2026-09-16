@@ -1,6 +1,9 @@
 <div [class]="`text-input text-input--${size()}`">
   @if (label()) {
-    <label>
+    <label class="text-input__label">
+      @if (required()) {
+        <span class="text-input__label__asterix">*</span>
+      }
       {{ label() }}
     </label>
   }

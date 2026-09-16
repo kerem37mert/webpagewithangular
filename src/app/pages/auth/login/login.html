@@ -1,6 +1,7 @@
 <app-text-input
   placeholder="username or e-mail"
   label="username or e-mail"
+  [required]="true"
   [field]="loginForm.identifier"
 
 />
@@ -8,6 +9,7 @@
   label="Password"
   placeholder="password"
   type="password"
+  [required]="true"
   [field]="loginForm.password"
 />
 
