@@ -18,17 +18,20 @@
     <app-text-input
       placeholder="Email"
       label="E-mail"
+      [required]="true"
       [field]="registerForm.email"
     />
     <app-text-input
       placeholder="User Name"
       label="User Name"
+      [required]="true"
       [field]="registerForm.username"
     />
     <app-text-input
       placeholder="Password"
       label="Password"
       type="password"
+      [required]="true"
       [field]="registerForm.password"
     />
 

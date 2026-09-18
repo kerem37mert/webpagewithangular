@@ -1,6 +1,6 @@
 import {Component, signal} from "@angular/core";
 import {RegisterForm} from '../../../types';
-import {form} from '@angular/forms/signals';
+import {email, form, required} from '@angular/forms/signals';
 import TextInput from '../../../components/text-input/text-input';
 import {Button} from '../../../components';
 import {LINKS} from '../../../constants';
@@ -26,7 +26,14 @@ export class Register {
     password: "",
   })
 
-  registerForm = form(this.registerModel);
+  registerForm = form(this.registerModel, (schemaPath) => {
+    required(schemaPath.email, {message: "This field is required"});
+    email(schemaPath.email, {message: 'Enter a valid email address'});
+
+    required(schemaPath.username, {message: "This field is required"});
+
+    required(schemaPath.password, {message: "This field is required"});
+  });
 
   loginLink = ['/', LINKS.auth, LINKS.login];
 }
