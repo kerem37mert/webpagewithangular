@@ -10,12 +10,18 @@
 
   &__label {
     &__asterix {
-      color: tomato;
+      color: red;
+    }
+  }
+
+  &__error-list {
+    .error-list-item {
+      color: red;
     }
   }
 
   &--small {
-    &__label {
+    .text-input__label {
       font-size: 1rem;
 
       &__asterix {
@@ -26,16 +32,24 @@
       font-size: 0.5rem;
       padding: 0.25rem 0.5rem;
     }
+
+    .text-input__error-list {
+      font-size: 0.64rem;
+    }
   }
 
   &--medium {
-    &__label {
+    .text-input__label {
       font-size: 1rem;
     }
 
     input {
       font-size: 0.875rem;
       padding: 0.5rem 0.75rem;
+    }
+
+    .text-input__error-list {
+      font-size: 0.75rem;
     }
   }
 }

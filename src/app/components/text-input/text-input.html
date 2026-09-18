@@ -15,7 +15,7 @@
   @if (fieldState().touched() && fieldState().invalid()) {
     <div class="text-input__error-list">
       @for (error of fieldState().errors(); track error) {
-        <div class="error">{{ error.message }}</div>
+        <div class="error-list-item">{{ error.message }}</div>
       }
     </div>
   }
