@@ -1,38 +1,46 @@
-<app-text-input
-  placeholder="First Name"
-  label="First Name"
-  [field]="registerForm.firstName"
-/>
-<app-text-input
-  placeholder="Last Name"
-  label="Last Name"
-  [field]="registerForm.lastName"
-/>
-<app-text-input
-  placeholder="Email"
-  label="E-mail"
-  [field]="registerForm.email"
-/>
-<app-text-input
-  placeholder="User Name"
-  label="User Name"
-  [field]="registerForm.username"
-/>
-<app-text-input
-  placeholder="Password"
-  label="Password"
-  type="password"
-  [field]="registerForm.password"
-/>
+<div class="register">
+  <div class="register__header">
+    Register StickyNote
+  </div>
+  <div class="register__body">
+    <div class="input-row">
+      <app-text-input
+        placeholder="First Name"
+        label="First Name"
+        [field]="registerForm.firstName"
+      />
+      <app-text-input
+        placeholder="Last Name"
+        label="Last Name"
+        [field]="registerForm.lastName"
+      />
+    </div>
+    <app-text-input
+      placeholder="Email"
+      label="E-mail"
+      [field]="registerForm.email"
+    />
+    <app-text-input
+      placeholder="User Name"
+      label="User Name"
+      [field]="registerForm.username"
+    />
+    <app-text-input
+      placeholder="Password"
+      label="Password"
+      type="password"
+      [field]="registerForm.password"
+    />
 
-<div class="btn-container">
-  <app-button
-    type="button"
-    text="Register"
-  />
-</div>
-
-<div class="login-footer">
-  or
-  <a [routerLink]="loginLink">login</a>
+    <div class="btn-container">
+      <app-button
+        type="button"
+        text="Register"
+      />
+    </div>
+  </div>
+  <div class="register__footer">
+    or
+    <a [routerLink]="loginLink">login</a>
+  </div>
 </div>

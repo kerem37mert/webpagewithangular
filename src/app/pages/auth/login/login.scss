@@ -1,4 +1,17 @@
-.btn-container {
-  display: flex;
-  justify-content: flex-end;
+.login {
+  &__header {
+    font-size: 1.25rem;
+    padding-bottom: 1rem;
+  }
+
+  &__body {
+    .btn-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__footer {
+
+  }
 }

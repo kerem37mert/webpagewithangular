@@ -1,4 +1,30 @@
-.btn-container {
-  display: flex;
-  justify-content: flex-end;
+.register {
+  &__header {
+    font-size: 1.25rem;
+    padding-bottom: 1rem;
+  }
+
+  &__body {
+    .btn-container {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .input-row {
+      display: flex;
+      gap: 0 1rem;
+
+      > * {
+        flex: 1;
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__footer {
+
+  }
 }
