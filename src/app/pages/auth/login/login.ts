@@ -46,7 +46,7 @@ export class Login {
         );
         console.log(response);
       } catch (error) {
-        console.log("ere", error);
+        console.log("error", error);
       } finally {
         this.isLoading.set(false);
       }
