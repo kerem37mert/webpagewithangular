@@ -10,11 +10,10 @@
     />
   </div>
 
-  <div class="note-list">
-    <app-draggable-note />
-    <app-draggable-note />
-    <app-draggable-note />
-    <app-draggable-note />
+  <div class="note-list" cdkDropList (cdkDropListDropped)="drop($event)">
+    @for (item of notes; track item) {
+      <app-draggable-note [text]="item" />
+    }
   </div>
 
   <app-edit-note [(isModalOpen)]="isModalOpen" />

@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import {Component, input} from "@angular/core";
 import { CdkDrag } from '@angular/cdk/drag-drop';
 
 @Component({
@@ -8,4 +8,6 @@ import { CdkDrag } from '@angular/cdk/drag-drop';
   imports: [CdkDrag]
 })
 
-export class DraggableNote {}
+export class DraggableNote {
+  text = input<number>(0);
+}
