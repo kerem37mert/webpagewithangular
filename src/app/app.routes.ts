@@ -1,10 +1,9 @@
 import { Routes } from '@angular/router';
-import { Home } from './pages';
-import { Contact, Register, Login } from './pages';
+import {Home, Profile} from './pages';
+import { Contact } from './pages';
 import { LINKS } from './constants';
-import { MainLayout, AuthLayout } from './components';
+import { MainLayout } from './components';
 import {authGuard} from './guards/auth-guard';
-import {unauthGuard} from './guards/unauth-guard';
 
 export const routes: Routes = [
   {
@@ -14,6 +13,10 @@ export const routes: Routes = [
       {
         path: "",
         component: Home,
+      },
+      {
+        path: LINKS.profile,
+        component: Profile,
         canActivate: [authGuard],
       },
       {
@@ -22,24 +25,4 @@ export const routes: Routes = [
       },
     ]
   },
-  {
-    path: LINKS.auth,
-    component: AuthLayout,
-    canActivate: [unauthGuard],
-    children: [
-      {
-        path: "",
-        redirectTo: LINKS.login,
-        pathMatch: "full",
-      },
-      {
-        path: LINKS.login,
-        component: Login
-      },
-      {
-        path: LINKS.register,
-        component: Register
-      },
-    ]
-  }
 ];

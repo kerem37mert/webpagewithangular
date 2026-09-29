@@ -19,6 +19,10 @@ export class Home {
     this.isModalOpen = true;
   }
 
+  handleOpenNote(): void {
+    this.isModalOpen = true;
+  }
+
   notes = [1,2,3,4,5,6,7,8,9];
 
   drop(event: CdkDragDrop<number[]>) {

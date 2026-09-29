@@ -1,42 +1,35 @@
-import {inject, Service} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {LoginRequestDTO, LoginResponseDTO, RegisterRequestDTO, RegisterResponseDTO} from './types';
-import {Observable, tap} from 'rxjs';
-import {Router} from '@angular/router';
+import { Service } from '@angular/core';
+import Keycloak from 'keycloak-js';
 
 @Service()
 export class AuthService {
-  private http = inject(HttpClient);
-  private router = inject(Router);
+  private keycloak: Keycloak = new Keycloak({
+    url: "https://auth.sticky-note.tech",
+    realm: "stickynote-realm",
+    clientId: "stickynote-fe-client",
+  });
 
-  login(credentials: LoginRequestDTO): Observable<LoginResponseDTO> {
-    return this.http.post<LoginResponseDTO>("/auth/login", credentials).pipe(
-      tap(async (res: LoginResponseDTO) => {
-        localStorage.setItem('accessToken', res.accessToken);
-        localStorage.setItem('refreshToken', res.refreshToken);
-        await this.router.navigate(['/']);
-      })
-    );
+  async initKeycloak() {
+    try {
+      const authenticated = await this.keycloak.init({
+        onLoad: "check-sso",
+        silentCheckSsoRedirectUri: `${window.location.origin}/silent-check-sso.html`,
+      });
+      if (authenticated) {
+        console.log('User is authenticated');
+      } else {
+        console.log('User is not authenticated');
+      }
+    } catch (error) {
+      console.error('Failed to initialize adapter:', error);
+    }
   }
 
-  register(credentials: RegisterRequestDTO): Observable<RegisterResponseDTO> {
-    return this.http.post<RegisterResponseDTO>("/auth/register", credentials);
+  isAuthenticated(): boolean {
+    return !!this.keycloak.token;
   }
 
-  getAccessToken() {
-    return localStorage.getItem('accessToken');
-  }
-
-  getRefreshToken() {
-    return localStorage.getItem('refreshToken');
-  }
-
-  isAuthenticated() {
-    return !!this.getAccessToken();
-  }
-
-  logout() {
-    localStorage.removeItem("accessToken");
-    localStorage.removeItem("refreshToken");
+  login() {
+    this.keycloak.login();
   }
 }

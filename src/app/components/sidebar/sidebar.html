@@ -1,5 +1,5 @@
 <div class="sidebar" cdkDropList (cdkDropListDropped)="drop($event)">
-  @for (item of menu; track item.link) {
+  @for (item of menu; track item.id) {
     <app-sidebar-item [item]="item" />
   }
 </div>

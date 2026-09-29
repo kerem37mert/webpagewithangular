@@ -12,7 +12,7 @@
 
   <div class="note-list" cdkDropList (cdkDropListDropped)="drop($event)">
     @for (item of notes; track item) {
-      <app-draggable-note [text]="item" />
+      <app-draggable-note [text]="item" (click)="handleOpenNote()" />
     }
   </div>
 
