@@ -32,4 +32,14 @@ export class AuthService {
   login() {
     this.keycloak.login();
   }
+
+  logout() {
+    this.keycloak.logout({
+      redirectUri: window.location.origin,
+    });
+  }
+
+  getToken() {
+    return this.keycloak.token;
+  }
 }

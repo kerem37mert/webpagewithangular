@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {DraggableNote} from '../../components';
 import { Button } from '../../components';
 import {EditNote} from './edit-note/edit-note';
 import {CdkDragDrop, CdkDropList, moveItemInArray} from '@angular/cdk/drag-drop';
+import {AuthService} from '../../services/auth';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,8 @@ import {CdkDragDrop, CdkDropList, moveItemInArray} from '@angular/cdk/drag-drop'
 })
 
 export class Home {
+  protected readonly authService = inject(AuthService);
+
   title = 'Sticky Notlarım';
   isModalOpen = false;
 

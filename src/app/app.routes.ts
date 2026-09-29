@@ -9,6 +9,7 @@ export const routes: Routes = [
   {
     path: LINKS.home,
     component: MainLayout,
+    canActivate: [authGuard],
     children: [
       {
         path: "",
@@ -17,7 +18,6 @@ export const routes: Routes = [
       {
         path: LINKS.profile,
         component: Profile,
-        canActivate: [authGuard],
       },
       {
         path: LINKS.contact,
