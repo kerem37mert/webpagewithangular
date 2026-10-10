@@ -1,9 +1,9 @@
-import {Component, inject} from '@angular/core';
+import {Component, effect, inject, signal} from '@angular/core';
 import {DraggableNote} from '../../components';
 import { Button } from '../../components';
 import {EditNote} from './edit-note/edit-note';
 import {CdkDragDrop, CdkDropList, moveItemInArray} from '@angular/cdk/drag-drop';
-import {AuthService} from '../../services/auth';
+import {NoteService} from '../../services/note';
 
 @Component({
   selector: 'app-home',
@@ -13,17 +13,27 @@ import {AuthService} from '../../services/auth';
 })
 
 export class Home {
-  protected readonly authService = inject(AuthService);
+  protected readonly noteService = inject(NoteService);
 
   title = 'Sticky Notlarım';
-  isModalOpen = false;
+  isModalOpen = signal<boolean>(false);
+
+  constructor() {
+    effect(() => {
+      this.noteService.getNoteList().subscribe({
+        next: data => {
+          console.log(data);
+        }
+      })
+    });
+  }
 
   handleNewNote(): void {
-    this.isModalOpen = true;
+    this.isModalOpen.set(true);
   }
 
   handleOpenNote(): void {
-    this.isModalOpen = true;
+    this.isModalOpen.set(true);
   }
 
   notes = [1,2,3,4,5,6,7,8,9];
