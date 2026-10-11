@@ -1,0 +1,22 @@
+.toast {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  /* type */
+  &--success {
+    background-color: green;
+    color: #fff;
+  }
+  &--error {
+    background-color: tomato;
+    color: #fff;
+  }
+  &--warning {
+    background-color: orange;
+    color: #fff;
+  }
+  &--info {
+    background-color: deepskyblue;
+    color: #fff;
+  }
+}
