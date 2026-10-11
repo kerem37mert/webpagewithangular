@@ -6,6 +6,6 @@ import { Component } from "@angular/core";
   styleUrls: ["./toast-message.scss"]
 })
 
-export class ToastMessageComponent {
+export class ToastMessage {
 
 }

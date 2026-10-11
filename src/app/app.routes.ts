@@ -7,12 +7,12 @@ import {authGuard} from './guards/auth-guard';
 
 export const routes: Routes = [
   {
-    path: LINKS.home,
+    path: "",
     component: MainLayout,
     canActivate: [authGuard],
     children: [
       {
-        path: "",
+        path: LINKS.home,
         component: Home,
       },
       {
