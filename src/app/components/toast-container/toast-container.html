@@ -1,5 +1,10 @@
 <div class="toast-container">
   @for (toast of toastService.toasts(); track toast.id) {
-    <app-toast-message [type]="toast.type" [message]="toast.message"/>
+    <app-toast-message
+      [type]="toast.type"
+      [message]="toast.message"
+      [autoClose]="toast.autoClose"
+      [duration]="toast.duration"
+    />
   }
 </div>

@@ -1,3 +1,8 @@
 <div [class]="`toast toast--${type()}`">
-  {{ message() }}
+  <div class="toast__body">
+    {{ message() }}
+  </div>
+  @if (autoClose()) {
+    <div class="progress" [style.animation-duration.ms]="duration()"></div>
+  }
 </div>
